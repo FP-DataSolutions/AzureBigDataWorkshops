@@ -96,3 +96,4 @@ D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMach
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\obj\Debug\SweetsMachine.EventHub.Sender.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\obj\Debug\SweetsMachine.EventHub.Sender.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\obj\Debug\SweetsMachine.EventHub.Sender.csprojResolveAssemblyReference.cache
