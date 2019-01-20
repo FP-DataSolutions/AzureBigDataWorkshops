@@ -23,12 +23,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Script Include="Init\CreateDatabase.usql" />
-    <Script Include="Script.usql" />
+    <Script Include="Init\RegisterAssemblies.usql" />
+    <Script Include="DailyStats.usql" />
     <ScriptCode Include="Init\CreateDatabase.usql.cs">
       <DependentUpon>Init\CreateDatabase.usql</DependentUpon>
     </ScriptCode>
-    <ScriptCode Include="Script.usql.cs">
-      <DependentUpon>Script.usql</DependentUpon>
+    <ScriptCode Include="Init\RegisterAssemblies.usql.cs">
+      <DependentUpon>Init\RegisterAssemblies.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="DailyStats.usql.cs">
+      <DependentUpon>DailyStats.usql</DependentUpon>
     </ScriptCode>
   </ItemGroup>
   <ItemGroup>
