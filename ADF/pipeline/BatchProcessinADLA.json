@@ -1,6 +1,56 @@
 {
 	"name": "BatchProcessinADLA",
 	"properties": {
+		"activities": [
+			{
+				"name": "SetCurrentDateFolder",
+				"type": "SetVariable",
+				"typeProperties": {
+					"variableName": "CurrentDate",
+					"value": {
+						"value": "@concat(pipeline().parameters.BaseADLSPath,'/',formatDateTime(utcnow(), 'yyyyMMdd'),'/')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "CopyRefDataDevices",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "SetCurrentDateFolder",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": true
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureBlobRefData",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"BaseADLSPath": {
+				"type": "String"
+			}
+		},
 		"variables": {
 			"CurrentDate": {
 				"type": "String"

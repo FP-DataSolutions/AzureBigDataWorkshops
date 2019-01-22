@@ -1,0 +1,14 @@
+{
+	"name": "AzureBlobRefData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ABS_ADW",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"typeProperties": {
+			"fileName": "",
+			"folderPath": "data/Ref"
+		}
+	}
+}
