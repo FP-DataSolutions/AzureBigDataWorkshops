@@ -7,7 +7,7 @@
 		},
 		"type": "AzureBlob",
 		"typeProperties": {
-			"fileName": "",
+			"fileName": "*",
 			"folderPath": "data/Ref"
 		}
 	}
