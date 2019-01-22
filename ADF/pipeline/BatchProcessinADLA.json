@@ -63,7 +63,8 @@
 		],
 		"parameters": {
 			"BaseADLSPath": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "/demo/refdata"
 			}
 		},
 		"variables": {
