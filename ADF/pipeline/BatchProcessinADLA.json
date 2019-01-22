@@ -36,11 +36,20 @@
 						"type": "BlobSource",
 						"recursive": true
 					},
+					"sink": {
+						"type": "AzureDataLakeStoreSink"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "AzureBlobRefData",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureDataLakeRefData",
 						"type": "DatasetReference"
 					}
 				]

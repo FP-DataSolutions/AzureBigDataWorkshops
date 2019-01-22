@@ -1,0 +1,30 @@
+{
+	"name": "AzureDataLakeRefData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_ADW",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Dir": {
+				"type": "String"
+			}
+		},
+		"type": "AzureDataLakeStoreFile",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"folderPath": {
+				"value": "@dataset().Dir",
+				"type": "Expression"
+			}
+		}
+	}
+}
