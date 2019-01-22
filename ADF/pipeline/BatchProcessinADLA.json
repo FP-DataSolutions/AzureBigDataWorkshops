@@ -1,6 +1,11 @@
 {
 	"name": "BatchProcessinADLA",
 	"properties": {
+		"variables": {
+			"CurrentDate": {
+				"type": "String"
+			}
+		},
 		"folder": {
 			"name": "BatchProcessingADLA"
 		}
