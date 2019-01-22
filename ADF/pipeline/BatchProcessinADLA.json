@@ -50,7 +50,13 @@
 				"outputs": [
 					{
 						"referenceName": "AzureDataLakeRefData",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Dir": {
+								"value": "@pipeline().parameters.BaseADLSPath",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
