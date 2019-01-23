@@ -53,7 +53,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"Dir": {
-								"value": "@pipeline().parameters.BaseADLSPath",
+								"value": "@variables('CurrentDate')",
 								"type": "Expression"
 							}
 						}
