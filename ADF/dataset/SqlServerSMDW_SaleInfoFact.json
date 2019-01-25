@@ -1,0 +1,13 @@
+{
+	"name": "SqlServerSMDW_SaleInfoFact",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ZionLabDemoTK",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"typeProperties": {
+			"tableName": "[dbo].[SaleInfoFact]"
+		}
+	}
+}
