@@ -1,0 +1,9 @@
+﻿USE DATABASE AzureDataWorkshops;
+
+DROP ASSEMBLY IF EXISTS [Microsoft.Analytics.Samples.Formats];
+CREATE ASSEMBLY IF NOT EXISTS [Microsoft.Analytics.Samples.Formats]
+FROM @"/Assemblies/Microsoft.Analytics.Samples.Formats.dll"
+WITH ADDITIONAL_FILES = 
+     (
+         @"/Assemblies/Newtonsoft.Json.dll"
+     );

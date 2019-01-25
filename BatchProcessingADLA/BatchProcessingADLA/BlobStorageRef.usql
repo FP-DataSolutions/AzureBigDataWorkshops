@@ -1,0 +1,26 @@
+﻿DECLARE @inputProducts string = "wasb://data@aw2019.blob.core.windows.net/Ref/SweetsProducts.json";
+DECLARE @outputProducts string ="/demo/refdata/SweetsProducts.csv";
+
+USE DATABASE AzureDataWorkshops;
+REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
+
+//Products
+@json =
+    EXTRACT jsonString string
+    FROM @inputProducts
+    USING Extractors.Text(delimiter : '\b', quoting : false);
+
+@jsonProd =
+    SELECT Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(jsonString) AS product
+    FROM @json;
+
+@products =
+    SELECT int.Parse(product["ProductId"]) AS prodId,
+           product["Name"]AS prodName,
+           double.Parse(product["Price"], new NumberFormatInfo { NumberDecimalSeparator ="." }) AS prodPrice
+    FROM @jsonProd;
+	
+
+OUTPUT @products
+TO @outputProducts
+USING Outputters.Csv(outputHeader : true);
