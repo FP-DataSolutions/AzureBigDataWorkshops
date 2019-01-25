@@ -6,6 +6,40 @@
 			"type": "LinkedServiceReference"
 		},
 		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "Date",
+				"type": "DateTime"
+			},
+			{
+				"name": "Device",
+				"type": "String"
+			},
+			{
+				"name": "DeviceLat",
+				"type": "Double"
+			},
+			{
+				"name": "DeviceLon",
+				"type": "Double"
+			},
+			{
+				"name": "ProductName",
+				"type": "String"
+			},
+			{
+				"name": "Quantity",
+				"type": "Int32"
+			},
+			{
+				"name": "Price",
+				"type": "Decimal"
+			},
+			{
+				"name": "TotalValue",
+				"type": "Decimal"
+			}
+		],
 		"typeProperties": {
 			"tableName": "[dbo].[SaleInfoFact]"
 		}
