@@ -89,6 +89,66 @@
 					"referenceName": "ADLA_ADW",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "LoadSalesInfoIntoOnPremiseData",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "ProcessData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "AzureDataLakeStoreSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": 10000,
+						"preCopyScript": "TRUNCATE TABLE dbo.SaleInfoFact"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"Date": "Date",
+							"SerialNumber": "Device",
+							"Lat": "DeviceLat",
+							"Lon": "DeviceLon",
+							"ProductName": "ProductName",
+							"Quantity": "Quantity",
+							"Price": "Price",
+							"TotalValue": "TotalValue"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureDataLake_SalesInfoFact",
+						"type": "DatasetReference",
+						"parameters": {
+							"DirName": "/demo/results/",
+							"FileName": "@concat(formatDateTime(utcnow(), 'yyyy-MM-dd'),'_Sales.csv')"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlServerSMDW_SaleInfoFact",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
