@@ -56,3 +56,39 @@ Zadaniem tego joba będzie proste przekierowanie wszystkich danych z EventHub'a 
 Poczekaj kilka sekund aż zadanie w pełni wystatruje, a następnie sprawdź czy jakiekolwiek dane pojawiły sięna ADLS'ie.
 
 ![](../Imgs/SADataLakeResult.png)
+
+### Zadanie 1
+
+Za pomocą usługi Azure Stream Analytics stwórz lub rozszerz istniejącego job'a o filtrację zdarzeń informujących o przekroczeniu średniej dopuszczalnej temperatury wewnątrz automatu. Numer seryjny, wraz z wartościami progowymi minimalnej oraz maksymalnej dopuszczalnej temperatury znajdziesz w pliku referencyjnym **SweetsDevices**. Przekroczenie temperatury powinno zostać zarejestrowane maksymalnie do 30 sekund. Wszystkie nieporządane zachowania powinny zostać odnotowane i przesłane do kolejnego (osobnego) EventHub'a.
+
+Podpowiedź:
+```
+SELECT SerialNumber, AvgTemp, MinTemp, MaxTemp
+INTO [EventHubOutput]
+FROM (
+SELECT SerialNumber, AvgTemp
+    ...
+)
+JOIN [SweetsDevices] ON ...
+WHERE ...
+GROUP BY...
+```
+
+### Zadanie 2
+Rozszerz istniejącego job'a o pobieranie informacji dotyczących wszystkich kupowanych produktów w przeciągu ostatnich 30 sekund. Otrzymane wyniki przekieruj do narzędzia PowerBi, a następnie zwizualizuj za pomocą jednego z dostępnych wykresów.
+
+Podpowiedź:
+```
+;WITH SaleInfo AS
+(
+SELECT SerialNumber, EventValue1, COUNT(*) AS Total 
+FROM ... 
+...
+WHERE ...
+GROUP BY ...
+)
+SELECT SerialNumber AS Device, Name AS Product,Total
+INTO [PowerBiOutput]
+FROM SaleInfo
+JOIN ...
+```
