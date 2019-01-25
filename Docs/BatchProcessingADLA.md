@@ -77,7 +77,15 @@ USING Outputters.Csv(outputHeader : true);
 
 
 
-## Generowanie raportów 
+## Uruchamianie skryptu U-SQL
+
+ Z poziomu portalu przejdź do usługi Azure Data Lake Analytics a następnie New Job
+
+![](../Imgs/ADLANewJob.png)
+Używając edytora wpisz kod joba U-SQL, określ ilość AU i uruchom joba
+![](../Imgs/ADLACreateAndRunJob.png)
+
+## Generowanie raportów (rozwiązanie)
 
 ```mssql
 //Azure
