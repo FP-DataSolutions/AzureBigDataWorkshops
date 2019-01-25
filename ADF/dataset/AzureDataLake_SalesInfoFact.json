@@ -5,38 +5,46 @@
 			"referenceName": "ADLS_ADW",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"DirName": {
+				"type": "String"
+			},
+			"FileName": {
+				"type": "String"
+			}
+		},
 		"type": "AzureDataLakeStoreFile",
 		"structure": [
 			{
-				"name": "Prop_0",
+				"name": "Date",
 				"type": "String"
 			},
 			{
-				"name": "Prop_1",
+				"name": "SerialNumber",
 				"type": "String"
 			},
 			{
-				"name": "Prop_2",
+				"name": "Lat",
 				"type": "String"
 			},
 			{
-				"name": "Prop_3",
+				"name": "Lon",
 				"type": "String"
 			},
 			{
-				"name": "Prop_4",
+				"name": "ProductName",
 				"type": "String"
 			},
 			{
-				"name": "Prop_5",
+				"name": "Quantity",
 				"type": "String"
 			},
 			{
-				"name": "Prop_6",
+				"name": "Price",
 				"type": "String"
 			},
 			{
-				"name": "Prop_7",
+				"name": "TotalValue",
 				"type": "String"
 			}
 		],
@@ -52,8 +60,14 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": true
 			},
-			"fileName": "2019-01-23_Sales.csv",
-			"folderPath": "demo/results"
+			"fileName": {
+				"value": "@dataset().FileName",
+				"type": "Expression"
+			},
+			"folderPath": {
+				"value": "@dataset().DirName",
+				"type": "Expression"
+			}
 		}
 	}
 }
