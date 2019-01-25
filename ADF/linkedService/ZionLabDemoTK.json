@@ -1,0 +1,15 @@
+{
+	"name": "ZionLabDemoTK",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=.;initial catalog=SweetsMachinesDW;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyOGM2Y2E4ZC05ZjUwLTQ1YzktYmM0NC1kMGMwMGU4M2JiODMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "DemoZionLapTK",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
