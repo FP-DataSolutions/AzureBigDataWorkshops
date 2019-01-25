@@ -17,13 +17,13 @@ W celu dodania nowej funkcji, przechodzimy do instancji usługi Azure Functions,
 
 ![](../Imgs/AFCreateFunction.png)
 
-Jak trigger wybierz **Azure Blob Storage trigger** - prawdopodobnie będzie konieczne doinstalowania rozszerzenia obsługującego magazyn danych.
+Jako trigger wybierz **Azure Blob Storage trigger** - prawdopodobnie będzie konieczne doinstalowania rozszerzenia obsługującego magazyn danych.
 
 W nowo wygenerowanej zakładce konieczne będzie skonfigurowanie połączenia do magazynu Storage Account. Kliknij w przycisk **new**, a następnie wybierz magazyn specjalnie stworzony dla Twojego **Function App**. Następnie stwórz nową funkcję. 
 
 Zanim przejdziemy do kodowania przejdź jeszcze na wybrany przez Ciebie magazyn danych i stwóz dwa kontenery:
-- **samples-workitems** - kontener do którego będziemy wrzucać nowe pliki,
-- **processed-workitems** - kontener który będzie przechowywał przetworzone obrazy.
+- **samples-workitems** - kontener, do którego będziemy wrzucać nowe pliki,
+- **processed-workitems** - kontener, który będzie przechowywał przetworzone obrazy.
 
 Po ponownym odwiedzeniu **Functions App** w menu po lewej stronie będzie widoczna nasza funkcja. Klikamy w nią, a następnie wybieramy zakłądkę **Integrate** oraz dodajemy nowy **Output**. Z listy wszystkich dostępnych pozycji wybierz **Azure Blob Storage**:
 
@@ -32,4 +32,4 @@ Po ponownym odwiedzeniu **Functions App** w menu po lewej stronie będzie widocz
 Następnie skonfiguruj parametry połączenia do przeprocesowanego pliku blob, podobnie jak to miało miejsce wcześniej z uzględnieniem nowej ścieżki **processed-workitems/{name}**.
 
 ### Zadanie 1
-Wykorzystaj dane dotyczące przekroczenia maksymalnej i minimalnej dopuszczalej temperatury automatu (opracowane w zadaniu 1 z zestawu Azure Stream Analytics),aktualnie przechowywane na dodatkowym EventHubie, do wygenerowania powiadomień emailowych za pośrednictwem Azure Functions.
+Wykorzystaj dane dotyczące przekroczenia maksymalnej i minimalnej dopuszczalej temperatury automatu (opracowane w zadaniu 1 z zestawu Azure Stream Analytics), aktualnie przechowywane na dodatkowym EventHubie, do wygenerowania powiadomień emailowych za pośrednictwem Azure Functions.

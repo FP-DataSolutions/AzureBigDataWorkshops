@@ -6,11 +6,11 @@ W celu stworzenia usługi  klikamy na zielony plus z napisem **Create a resource
 
 ![](../Imgs/CreateSAJob.png)
 
-Przed stworzeniem usługi będziemy mieli możliwość wyboru gdzie ma zostać wysłany nasz job - czy na chmurę lub na jakimś środowisku on-premise. W przypadku chmury możliwe będzie dodatkowa konfiguracja jednostek streamingowych, odpowiadających za prędkość przetwarzania informacji. Na nasze potrzeby streaming units ustawiamy na 1.
+Przed stworzeniem usługi będziemy mieli możliwość wyboru gdzie ma zostać wysłany nasz job - na chmurę lub jakieś środowisko on-premise. W przypadku chmury możliwe będzie dodatkowa konfiguracja jednostek streamingowych, odpowiadających za prędkość przetwarzania informacji. Na nasze potrzeby streaming units ustawiamy na 1.
 
 ## Konfiguracja wejść job'a
 
-Po utworzeniu usługi zabieramy się za konfigurację wejść oraz wyjść. Po lewej stronie znajduje się sekcja **Job topology** z której klikamy w zakładkę **Inputs**. Następnie dodajemy nowy strumnień wejściowy klikając w przycisk **Add stream input**, a póżniej wybieramy **Event Hub**. Wskazujemy na wcześniej stworzony EventHub. Format serializacji ustawiamy na JSON i przechodzimy dalej. Możemy teraz podejrzeć format pobieranych przez nas danych klikając w przycisk **Sample data**:
+Po utworzeniu usługi zabieramy się za konfigurację wejść oraz wyjść. Po lewej stronie znajduje się sekcja **Job topology**, z której klikamy w zakładkę **Inputs**. Później dodajemy nowy strumnień wejściowy klikając w przycisk **Add stream input**, a następnie wybieramy **Event Hub**. Wskazujemy na wcześniej stworzony EventHub. Format serializacji ustawiamy na JSON i przechodzimy dalej. Możemy teraz podejrzeć format pobieranych przez nas danych klikając w przycisk **Sample data**:
 
 ![](../Imgs/SAGetSampleData.png)
 
@@ -26,7 +26,7 @@ Pobrany plik można otworzyć choćby przy pomocy notatnika.
 
 ## Konfiguracja wyjść job'a
 
-Podobnie jak miało to miejsce przy konfiguracji wejść po lewej stronie wybiramy zakładkę **Job topology**, a następnie klikamy w **Outputs**. Dodajemy nowy strumień wyjściowy, natomiast z menu wybieramy **Data Lake Storage Gen1**:
+Podobnie jak miało to miejsce przy konfiguracji wejść po lewej stronie wybiramy zakładkę **Job topology**, a następnie klikamy w **Outputs**. Dodajemy nowy strumień wyjściowy, a z menu wybieramy **Data Lake Storage Gen1**:
 
 ![](../Imgs/SAOutputConfiguration.png)
 
@@ -53,7 +53,7 @@ Zadaniem tego joba będzie proste przekierowanie wszystkich danych z EventHub'a 
 
 ![](../Imgs/SAStartJob.png)
 
-Poczekaj kilka sekund aż zadanie w pełni wystatruje, a następnie sprawdź czy jakiekolwiek dane pojawiły sięna ADLS'ie.
+Poczekaj kilka sekund aż zadanie w pełni wystatruje, a następnie sprawdź czy jakiekolwiek dane pojawiły się na ADLS'ie.
 
 ![](../Imgs/SADataLakeResult.png)
 
