@@ -1,10 +1,10 @@
-# Analiza danych w czasie rzeczywistym Azure Stream Analytics
+# Analiza danych z wykorzystaniem Azure Stream Analytics
 
 ## Stworzenie usługi Azure Stream Analytics
 
 W celu stworzenia usługi  klikamy na zielony plus z napisem **Create a resource**, a następnie z listy dostępnych kategorii wybieramy zakładkę **Analytics**. Po prawej stronie powinna być dostępna opcja **Stream analytics job**, jak na poniższym screenie:
 
-![](../Imgs/CreateSaJob.png)
+![](../Imgs/CreateSAJob.png)
 
 Przed stworzeniem usługi będziemy mieli możliwość wyboru gdzie ma zostać wysłany nasz job - czy na chmurę lub na jakimś środowisku on-premise. W przypadku chmury możliwe będzie dodatkowa konfiguracja jednostek streamingowych, odpowiadających za prędkość przetwarzania informacji. Na nasze potrzeby streaming units ustawiamy na 1.
 
