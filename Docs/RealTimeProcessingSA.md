@@ -6,11 +6,11 @@ W celu stworzenia usługi  klikamy na zielony plus z napisem **Create a resource
 
 ![](../Imgs/CreateSAJob.png)
 
-Przed stworzeniem usługi będziemy mieli możliwość wyboru gdzie ma zostać wysłany nasz job - czy na chmurę lub na jakimś środowisku on-premise. W przypadku chmury możliwe będzie dodatkowa konfiguracja jednostek streamingowych, odpowiadających za prędkość przetwarzania informacji. Na nasze potrzeby streaming units ustawiamy na 1.
+Przed stworzeniem usługi będziemy mieli możliwość wyboru gdzie ma zostać wysłany nasz job - na chmurę lub jakieś środowisko on-premise. W przypadku chmury możliwe będzie dodatkowa konfiguracja jednostek streamingowych, odpowiadających za prędkość przetwarzania informacji. Na nasze potrzeby streaming units ustawiamy na 1.
 
 ## Konfiguracja wejść job'a
 
-Po utworzeniu usługi zabieramy się za konfigurację wejść oraz wyjść. Po lewej stronie znajduje się sekcja **Job topology** z której klikamy w zakładkę **Inputs**. Następnie dodajemy nowy strumnień wejściowy klikając w przycisk **Add stream input**, a póżniej wybieramy **Event Hub**. Wskazujemy na wcześniej stworzony EventHub. Format serializacji ustawiamy na JSON i przechodzimy dalej. Możemy teraz podejrzeć format pobieranych przez nas danych klikając w przycisk **Sample data**:
+Po utworzeniu usługi zabieramy się za konfigurację wejść oraz wyjść. Po lewej stronie znajduje się sekcja **Job topology**, z której klikamy w zakładkę **Inputs**. Później dodajemy nowy strumnień wejściowy klikając w przycisk **Add stream input**, a następnie wybieramy **Event Hub**. Wskazujemy na wcześniej stworzony EventHub. Format serializacji ustawiamy na JSON i przechodzimy dalej. Możemy teraz podejrzeć format pobieranych przez nas danych klikając w przycisk **Sample data**:
 
 ![](../Imgs/SAGetSampleData.png)
 
@@ -26,7 +26,7 @@ Pobrany plik można otworzyć choćby przy pomocy notatnika.
 
 ## Konfiguracja wyjść job'a
 
-Podobnie jak miało to miejsce przy konfiguracji wejść po lewej stronie wybiramy zakładkę **Job topology**, a następnie klikamy w **Outputs**. Dodajemy nowy strumień wyjściowy, natomiast z menu wybieramy **Data Lake Storage Gen1**:
+Podobnie jak miało to miejsce przy konfiguracji wejść po lewej stronie wybiramy zakładkę **Job topology**, a następnie klikamy w **Outputs**. Dodajemy nowy strumień wyjściowy, a z menu wybieramy **Data Lake Storage Gen1**:
 
 ![](../Imgs/SAOutputConfiguration.png)
 
@@ -53,6 +53,42 @@ Zadaniem tego joba będzie proste przekierowanie wszystkich danych z EventHub'a 
 
 ![](../Imgs/SAStartJob.png)
 
-Poczekaj kilka sekund aż zadanie w pełni wystatruje, a następnie sprawdź czy jakiekolwiek dane pojawiły sięna ADLS'ie.
+Poczekaj kilka sekund aż zadanie w pełni wystatruje, a następnie sprawdź czy jakiekolwiek dane pojawiły się na ADLS'ie.
 
 ![](../Imgs/SADataLakeResult.png)
+
+### Zadanie 1
+
+Za pomocą usługi Azure Stream Analytics stwórz lub rozszerz istniejącego job'a o filtrację zdarzeń informujących o przekroczeniu średniej dopuszczalnej temperatury wewnątrz automatu. Numer seryjny, wraz z wartościami progowymi minimalnej oraz maksymalnej dopuszczalnej temperatury znajdziesz w pliku referencyjnym **SweetsDevices**. Przekroczenie temperatury powinno zostać zarejestrowane maksymalnie do 30 sekund. Wszystkie nieporządane zachowania powinny zostać odnotowane i przesłane do kolejnego (osobnego) EventHub'a.
+
+Podpowiedź:
+```
+SELECT SerialNumber, AvgTemp, MinTemp, MaxTemp
+INTO [EventHubOutput]
+FROM (
+SELECT SerialNumber, AvgTemp
+    ...
+)
+JOIN [SweetsDevices] ON ...
+WHERE ...
+GROUP BY...
+```
+
+### Zadanie 2
+Rozszerz istniejącego job'a o pobieranie informacji dotyczących wszystkich kupowanych produktów w przeciągu ostatnich 30 sekund. Otrzymane wyniki przekieruj do narzędzia PowerBi, a następnie zwizualizuj za pomocą jednego z dostępnych wykresów.
+
+Podpowiedź:
+```
+;WITH SaleInfo AS
+(
+SELECT SerialNumber, EventValue1, COUNT(*) AS Total 
+FROM ... 
+...
+WHERE ...
+GROUP BY ...
+)
+SELECT SerialNumber AS Device, Name AS Product,Total
+INTO [PowerBiOutput]
+FROM SaleInfo
+JOIN ...
+```
