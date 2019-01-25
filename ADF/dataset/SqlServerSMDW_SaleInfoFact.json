@@ -5,6 +5,9 @@
 			"referenceName": "ZionLabDemoTK",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Demos"
+		},
 		"type": "SqlServerTable",
 		"structure": [
 			{
