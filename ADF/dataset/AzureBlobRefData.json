@@ -5,6 +5,9 @@
 			"referenceName": "ABS_ADW",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "Demos"
+		},
 		"type": "AzureBlob",
 		"typeProperties": {
 			"fileName": "*",

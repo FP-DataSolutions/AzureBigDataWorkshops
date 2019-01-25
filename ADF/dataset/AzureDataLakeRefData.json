@@ -10,6 +10,9 @@
 				"type": "String"
 			}
 		},
+		"folder": {
+			"name": "Demos"
+		},
 		"type": "AzureDataLakeStoreFile",
 		"typeProperties": {
 			"fileName": "*.json",
