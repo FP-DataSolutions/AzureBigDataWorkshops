@@ -110,6 +110,19 @@ Transformacje mają też to do siebie, że należy je traktować jako plan wykon
 
 Akcje to zapis danych, zebranie i wyświetlenie. 
 
+### Spark SQL
+
+Drugim sposobem dostępu do danych jest Spark SQL. Mając `DataFrame` możemy go zarejestrować za pomocą `df.registerTempTable("alias")`. Będą one widoczne jako tabela tymczasowa. 
+Od tego momentu możemy tworzyć zapytania SQL. 
+
+Możemy pisać zapytania za pomocą `sqlContextu` => `sqlContext.sql("")` lub bezpośrednio w komórkach notebooka przy wykorzystaniu polecenia `%sql`.
+
+Przykładowe zapytanie:
+
+```SQL
+SELECT * FROM alias
+```
+
 
 #### Zapis danych
 
