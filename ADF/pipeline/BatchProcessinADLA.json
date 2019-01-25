@@ -61,7 +61,7 @@
 				]
 			},
 			{
-				"name": "U-SQL1",
+				"name": "ProcessData",
 				"type": "DataLakeAnalyticsU-SQL",
 				"dependsOn": [
 					{
