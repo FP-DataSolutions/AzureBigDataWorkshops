@@ -15,7 +15,7 @@
 		},
 		"type": "AzureDataLakeStoreFile",
 		"typeProperties": {
-			"fileName": "*.json",
+			"fileName": "",
 			"folderPath": {
 				"value": "@dataset().Dir",
 				"type": "Expression"
