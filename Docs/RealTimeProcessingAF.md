@@ -30,6 +30,3 @@ Po ponownym odwiedzeniu **Functions App** w menu po lewej stronie będzie widocz
 ![](../Imgs/AFConfigureOutput.png)
 
 Następnie skonfiguruj parametry połączenia do przeprocesowanego pliku blob, podobnie jak to miało miejsce wcześniej z uzględnieniem nowej ścieżki **processed-workitems/{name}**.
-
-### Zadanie 1
-Wykorzystaj dane dotyczące przekroczenia maksymalnej i minimalnej dopuszczalej temperatury automatu (opracowane w zadaniu 1 z zestawu Azure Stream Analytics), aktualnie przechowywane na dodatkowym EventHubie, do wygenerowania powiadomień emailowych za pośrednictwem Azure Functions.
