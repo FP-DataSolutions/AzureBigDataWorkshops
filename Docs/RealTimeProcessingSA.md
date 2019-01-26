@@ -72,10 +72,24 @@ SELECT SerialNumber, AvgTemp
 JOIN [SweetsDevices] ON ...
 WHERE ...
 GROUP BY...
+
+---Solutions
+SELECT ti.SerialNumber,ti.AvgTemp, d.min AS MinTemp, d.max AS MaxTemp
+INTO [SweetsMachinesWarn]
+FROM (
+SELECT se.SerialNumber, AVG(EventValue1) AS AvgTemp
+ FROM [SweetsMachinesEvents] AS se 
+ TIMESTAMP BY se.EventTime 
+ WHERE se.EventType = 0 --Information about temp
+ GROUP BY TUMBLINGWINDOW(second,30), se.SerialNumber 
+)
+ AS ti
+JOIN [SweetsDevices] AS d ON d.id = ti.SerialNumber 
+WHERE ti.AvgTemp < d.min OR ti.AvgTemp > d.max ;
 ```
 
 ### Zadanie 2
-Rozszerz istniejącego job'a o pobieranie informacji dotyczących wszystkich kupowanych produktów w przeciągu ostatnich 30 sekund. Otrzymane wyniki przekieruj do narzędzia PowerBi, a następnie zwizualizuj za pomocą jednego z dostępnych wykresów.
+Rozszerz istniejącego job'a o pobieranie informacji dotyczących wszystkich kupowanych produktów w przeciągu ostatnich 30 sekund. Otrzymane wyniki przekieruj do dowolnego bliku na blob storage.
 
 Podpowiedź:
 ```
@@ -88,7 +102,7 @@ WHERE ...
 GROUP BY ...
 )
 SELECT SerialNumber AS Device, Name AS Product,Total
-INTO [PowerBiOutput]
+INTO [BlobStorageOutput]
 FROM SaleInfo
 JOIN ...
 ```

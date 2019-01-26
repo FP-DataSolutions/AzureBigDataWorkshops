@@ -56,7 +56,7 @@ Rozwiązanie zosta zbudowane na bazie stosu technologicznego chmury obliczeniowe
 ### Krok 3: Przechowywanie danych 
 [Podgląd](./Docs/Storage.md)
 ### Krok 4: Przetwarzanie danych strumieniowych
-[Azure Analitics](./Docs/BatchProcessing.md)
+[Azure Analitics](./Docs/RealTimeProcessingSA.md)
 [Spark Streaming](./Docs/Spark.md)
 ### Krok 5: Azure Data Lake Analitics
 [Podgląd](./Docs/BatchProcessingADLA.md)
