@@ -134,7 +134,7 @@ Można również skonfigurować nową instancje usługi Azure Data Factory (Nort
 
 #### Tips
 
-**Pipeline należy utworzyć na wewnętrznym repozytorium Azure Data Factory.(Pipeline i dataset'y powinny być twrzone w dedykowanych folderach {nazwa konta usera})**
+**Pipeline należy utworzyć na wewnętrznym repozytorium Azure Data Factory.(Pipeline i dataset'y powinny być tworzone w dedykowanych folderach {nazwa konta usera})**
 
 Pipeline powinien mieć jeden paramter np. BaseADLSPath -określający scieżkę bazowa w której, w podfolderach są zlokalizowane pliki z danymi (Raw Data). Pliki z danymi powinny być zlokalizowane w podfolderach z datą wygenerowania np 20190126 (format yyyyMMdd)
 
