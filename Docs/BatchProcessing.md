@@ -42,7 +42,7 @@ W pierwszym etapie należy wyniki zapisać na Azure Data Lake Storage, w drugim 
 
 Przykład danych:
 
-![](D:../Imgs/SampleRawData.png)
+![](../Imgs/SampleRawData.png)
 
 **Zadanie może być wykonane na Azure Data Lake Analytics lub Azure Databricks.**
 
@@ -156,7 +156,7 @@ Pipeline można uruchomić poprzez Debug lub Trigger Now
 
 
 
-![](D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\Imgs\ADFCopyRefData.png)
+![](D../Imgs/ADFCopyRefData.png)
 
 Po uruchomieniu tego pipeline w folderze docelowym na ADLS powinny znajeźć się pliki z danymi referencyjmymi z Azure Blob Storage.
 

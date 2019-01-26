@@ -25,77 +25,40 @@ Przykłady dostępne są na repozytorium
 
 
 | SweetsMachineSimulatorApp | https://github.com/FP-DataSolutions/AzureBigDataWorkshops/tree/develop/SweetMachineSimulator/Binary |
-| ------------------------- | ------------------------------------------------------------ |
-| Date referencyjne         | https://github.com/FP-DataSolutions/AzureBigDataWorkshops/tree/develop/Data/Ref |
-|                           |                                                              |
-|                           |                                                              |
+| ------------------------- | --------------------------------------------------------------------------------------------------- |
+| Date referencyjne         | https://github.com/FP-DataSolutions/AzureBigDataWorkshops/tree/develop/Data/Ref                     |
+|                           |                                                                                                     |
+|                           |                                                                                                     |
 
 
 
 ### Instrukcja
 
-#### Urządzenia IoT
+Rozwiązanie zosta zbudowane na bazie stosu technologicznego chmury obliczeniowej Azure. Można wyróżnić dwie części funkcjonalne rozwiązania:
+* ścieżkę hot - przetwarzającą dane przyrostowe w czasie near-real-time
+* ścieżkę cold - przetwarzającą większy zakres danych.
 
-Urządzenia IoT (Sweet Machines) są symulowane przez symulator SweetsMachineSimulatorApp.exe.
+#### Ścieżka hot 
+1. Do zbierania danych potrzebny jest Hub (Event Hub, IoT Hub, Kafka), który umożliwia kolejkowanie, zbieranie danych, a następnie konsumowanie.
+2. Do analizy danych potrzebne jest rozwiązanie, które umożliwia konsumowanie danych eventowych, a następnie przetworzenie ich oraz zapis lub przesanie wyników analizy danych w czasie rzeczywistym lub prawie rzeczywistym. Dostępne rozwiązania to Azure Stream Analitics, Databricks.  
+3. Przechowywanie danych wynikowych lub danych wykorzystywanych w przetwarzaniu. Do tego celu możemy wykorzystać Blob Storage, Data Lake Storage lub także huby.
+4. Reagowanie na pojawienie się nowych informacji. Do tego celu możemy wykorzystać Azure Functons.
 
-W pierwszym kroku należy utworzyć usługę Azure Event Hub tak aby można było przesyłać do niej dane z symulatora.
+#### Ścieżka cold 
+1. Miejsce przechowywania danych. Do tego celu możemy wykorzystać wszelkiego rodzaju Storage: Blob Storage, Data Lake Storage. 
+2. Analiza dnaych umożliwiająca skalowalne przetwarzanie zwiększającej się ilości danych. Do tego celu można wykorzystać: Data Lake Analitics, HdInsight, Databriks.
+3. Prezentacja wyników. Do tego celu można wykorzystać notebooki zeppelin, juypter) oraz Power Bi. 
 
-Uwtórz usługę Event Hubs
-
-1. Azure->Nowy->Event Hubs->Utwórz 
-
-2. Podaj nazwę (bdpmydevlabs)
-
-3. Wybierz Priceing tier (wystarczy Basic)
-
-4. Wybierz subskrypcje
-
-5. Wybierz wcześniej stworzoną Resource Group
-
-6. Wybierz lokalizację (sugerowana Europa Północna)
-
-7. Określ Througput Units (wystarczy 2)
-
-
-
-   Po utworzeniu Event Hubs Namespace w ramach utworzonego Event Hub dodaj nowy Event Hub (podaj nazwę np. sweets<IdUsera> pozostałe wartości mogą zostać domyślne)  
-
-![](./Imgs/EventHubs.png)
-
-Aby połączyć do EventHub można użyć **RootManageSharedAccessKey** lub wygenrować swoje Policy dla stworzonego EventHub'a.
-
-**Dostęp do RootManageSharedAccessKey** 
-
-Z poziomu Event Hubs Namespace przejdź do Shared access policies, przejdź do **RootManageSharedAccessKey** i skopiuj **Connection string–primary key**
-
-Skopiowany Connection String nie zawiera informacji o EntityPath=<<nazwa Event Hub'a>>. Docelowy connection string powinien wyglądać jak ten poniższy
-
-```
-Endpoint=sb://sweets-hub0.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey ;SharedAccessKey={KEY};EntityPath=sweets
-```
-
-Zamiast wykorzystywać RootManageSharedAccessKey można stworzyć policy dla Event Hub. W tym celu należy przejść do storzonego Event Huba i opcji Shared Access Policies -> Add
-
-![](./Imgs/AddEventHubPolicy.png)
-
-Następnie skopiuj wygenerowany  **Connection string–primary key**
-
-![](./Imgs/AddEventHubPolicyConnections.png)
-
-**Uruchomienie symulatora**
-
-1. Pobierz aplikację SweetsMachineSimulatorApp
-
-2. Otwórz plik SweetsMachineSimulatorApp.exe.config
-
-3. Ustaw EventHubConnectionString (Pobrany wcześniej Connection string–primary key -musi zawierać EntityPath)
-
-4. Uruchom aplikacje (SweetsMachineSimulatorApp.exe)
-
-5. Zaznacz opcję Send to Cloud i Start
-
-   ![](./Imgs/SweetMachineApp.png)
-
-Dane z urządzeń powinny być przesyłane do wcześniej stworzonego Event Hub
-
-![](./Imgs/EventHubMessage.png)
+### Krok 1: Dane 
+[Podgląd](./Docs/DataSources.md)
+### Krok 2: Urządzenia IoT
+[Podgląd](./Docs/IoT.md)
+### Krok 3: Przechowywanie danych 
+[Podgląd](./Docs/Storage.md)
+### Krok 4: Przetwarzanie danych strumieniowych
+[Azure Analitics](./Docs/BatchProcessing.md)
+[Spark Streaming](./Docs/Spark.md)
+### Krok 5: Azure Data Lake Analitics
+[Podgląd](./Docs/BatchProcessingADLA.md)
+### Krok 5: Azure Databricks
+[Podgląd](./Docs/Spark.md)
