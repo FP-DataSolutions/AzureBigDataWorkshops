@@ -72,6 +72,20 @@ SELECT SerialNumber, AvgTemp
 JOIN [SweetsDevices] ON ...
 WHERE ...
 GROUP BY...
+
+---Solutions
+SELECT ti.SerialNumber,ti.AvgTemp, d.min AS MinTemp, d.max AS MaxTemp
+INTO [SweetsMachinesWarn]
+FROM (
+SELECT se.SerialNumber, AVG(EventValue1) AS AvgTemp
+ FROM [SweetsMachinesEvents] AS se 
+ TIMESTAMP BY se.EventTime 
+ WHERE se.EventType = 0 --Information about temp
+ GROUP BY TUMBLINGWINDOW(second,30), se.SerialNumber 
+)
+ AS ti
+JOIN [SweetsDevices] AS d ON d.id = ti.SerialNumber 
+WHERE ti.AvgTemp < d.min OR ti.AvgTemp > d.max ;
 ```
 
 ### Zadanie 2
