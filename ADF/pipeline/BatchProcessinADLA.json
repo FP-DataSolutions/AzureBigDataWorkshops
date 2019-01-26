@@ -80,6 +80,7 @@
 				},
 				"typeProperties": {
 					"scriptPath": "demo/scripts/DailyStats.usql",
+					"degreeOfParallelism": 2,
 					"scriptLinkedService": {
 						"referenceName": "ADLS_ADW",
 						"type": "LinkedServiceReference"
