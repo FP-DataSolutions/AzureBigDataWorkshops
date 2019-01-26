@@ -22,9 +22,18 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Script Include="BlobStorageRef.usql" />
+    <Script Include="DailyStatsLocal.usql" />
     <Script Include="Init\CreateDatabase.usql" />
     <Script Include="Init\RegisterAssemblies.usql" />
     <Script Include="DailyStats.usql" />
+    <Script Include="Init\RegisterAssembliesLocal.usql" />
+    <ScriptCode Include="BlobStorageRef.usql.cs">
+      <DependentUpon>BlobStorageRef.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="DailyStatsLocal.usql.cs">
+      <DependentUpon>DailyStatsLocal.usql</DependentUpon>
+    </ScriptCode>
     <ScriptCode Include="Init\CreateDatabase.usql.cs">
       <DependentUpon>Init\CreateDatabase.usql</DependentUpon>
     </ScriptCode>
@@ -33,6 +42,9 @@
     </ScriptCode>
     <ScriptCode Include="DailyStats.usql.cs">
       <DependentUpon>DailyStats.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Init\RegisterAssembliesLocal.usql.cs">
+      <DependentUpon>Init\RegisterAssembliesLocal.usql</DependentUpon>
     </ScriptCode>
   </ItemGroup>
   <ItemGroup>
