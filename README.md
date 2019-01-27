@@ -58,7 +58,12 @@ Rozwiązanie zosta zbudowane na bazie stosu technologicznego chmury obliczeniowe
 ### Krok 4: Przetwarzanie danych strumieniowych
 [Azure Analitics](./Docs/RealTimeProcessingSA.md)
 [Spark Streaming](./Docs/Spark.md)
-### Krok 5: Azure Data Lake Analitics
-[Podgląd](./Docs/BatchProcessingADLA.md)
-### Krok 5: Azure Databricks
+### Krok 5: Przetwarzanie w trybie batchowym
+[Podgląd](./Docs/BatchProcessing.md)
+#### Azure Data Lake Analytics
+[Rozwiązanie](./Docs/BatchProcessingADLA.md)
+#### Azure Databricks
 [Podgląd](./Docs/Spark.md)
+[Rozwiązanie Spark SQL](./Docs/BatchProcessingSparkSQL.md)
+### Krok 6: Integracja rozwiązania  Azure Data Factory
+[Rozwiązanie -in progress](./Docs/ADF.md)

@@ -16,12 +16,17 @@ Usługa Azure Data Lake Analytics domyślnie nie zawiera extractor'a dla formatu
 
 ###Tworzenie bazy danych
 
+(Patrz poniżej uruchamianie Job U-SQL)
+
 ```mssql
 DROP DATABASE IF EXISTS AzureDataWorkshops;
 CREATE DATABASE AzureDataWorkshops;
 ```
 ### Rejestrowanie Assemblies 
-Pliki rozszerzeń należy skopiować na ADLS.
+
+(Patrz poniżej uruchamianie Job U-SQL)
+
+Pliki rozszerzeń należy skopiować na ADLS (na adwadls folder Assemblies).
 Rejestrowanie rozszerzenie do porzetwarzania formatu json
 ```mssql
 USE DATABASE AzureDataWorkshops;
@@ -87,30 +92,40 @@ Używając edytora wpisz kod joba U-SQL, określ ilość AU i uruchom joba
 
 ## Generowanie raportów (rozwiązanie)
 
+W celu wygenerowania raportów wykorzystany zostanie skrypt U-SQL. W poniższym rozwiązaniu założono, że przetwarzamy dane  z dnia poprzedniego oraz, że dane referencyjne znajdują się na ADLS
+
 ```mssql
 //Azure
+//Base Path to reference data
 DECLARE @inputRefbasePath string = @"/demo/refdata/";
+//Base Path to Devices data
 DECLARE @inputbasePath string = @"/demo/sweetsmachine/";
+//Base Path to results 
 DECLARE @outputbasePath string = @"/demo/results/";
 
-//DECLARE @prevDate string = DateTime.UtcNow.Date.AddDays( - 1).ToString("yyyy-MM-dd");
-DECLARE @prevDate string = DateTime.UtcNow.Date.ToString("yyyy-MM-dd");
-DECLARE @inputFiles string = @inputbasePath + @prevDate + "\\{FileName}.csv";
+//Compute prev date
+DECLARE @prevDate string = DateTime.UtcNow.Date.AddDays( - 1).ToString("yyyy-MM-dd");
+//DECLARE @prevDate string = DateTime.UtcNow.Date.ToString("yyyy-MM-dd");
+//Compute Devices data path - {FileName} -FileSet -all files with csv ext
+DECLARE @inputFiles string = @inputbasePath +@"date=" + @prevDate + "/{FileName}.csv";
+//Compute Output paths
 DECLARE @ouputFile string = @outputbasePath + @prevDate +"_Sales.csv";
 DECLARE @outputTempFile string = @outputbasePath+@prevDate+"_Temp.csv";
+//Compute path to reference data
 DECLARE @inputProducts string = @inputRefbasePath + @"SweetsProducts.json";
 DECLARE @inputDevices string = @inputRefbasePath + @"SweetsDevices.json";
 
-
+//Change DB context
 USE DATABASE AzureDataWorkshops;
+//Add assembly declaration
 REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
 
-//Products
+//Load Products ref data -use Text extractor, ADLA does not support by default json
 @json =
     EXTRACT jsonString string
     FROM @inputProducts
     USING Extractors.Text(delimiter : '\b', quoting : false);
-
+//Parse Products json data 
 @jsonProd =
     SELECT Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(jsonString) AS product
     FROM @json;
@@ -121,12 +136,12 @@ REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
            double.Parse(product["Price"], new NumberFormatInfo { NumberDecimalSeparator ="." }) AS prodPrice
     FROM @jsonProd;
 
-//Devices
+//Load Devices referance data
 @jsonDevices =
     EXTRACT jsonString string
     FROM @inputDevices
     USING Extractors.Text(delimiter : '\b', quoting : false);
-
+//Parse Device reference data
 @jsonDev =
     SELECT Microsoft.Analytics.Samples.Formats.Json.JsonFunctions.JsonTuple(jsonString) AS device    FROM @jsonDevices;
 
@@ -137,7 +152,7 @@ REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
           device["min"] AS deviceMin,
           device["max"] AS deviceMax
     FROM @jsonDev;
-
+//Load measurement data -apply schema on read use Text extractor with "," column separator, with head =true and with additional column FileName (see input path)
 @ds =
     EXTRACT SerialNumber string,
             EventType int,
@@ -163,6 +178,7 @@ REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
              SerialNumber,
              EventValue1;
 
+//Calculate reports
 @devTemp =
     SELECT EventTime.Date AS Date,
            SerialNumber,
@@ -200,6 +216,7 @@ REFERENCE ASSEMBLY [Microsoft.Analytics.Samples.Formats];
              @devices AS d
          ON d.deviceId == t.SerialNumber;
 
+//Save reports data -csv format with header
 OUTPUT @saleInfo
 TO @ouputFile
 ORDER BY Date,
@@ -214,3 +231,10 @@ ORDER BY Date,
 USING Outputters.Csv(outputHeader : true);
 ```
 
+Po wykonaniu tego skryptu U-SQL (plan poniżej)
+
+![](../Imgs/ADLAReportsPlan.png)
+
+W folderze results powiniśmy zobaczyć wyniki naszego przetwarzania
+
+![](../Imgs/ADLAResults.png)
