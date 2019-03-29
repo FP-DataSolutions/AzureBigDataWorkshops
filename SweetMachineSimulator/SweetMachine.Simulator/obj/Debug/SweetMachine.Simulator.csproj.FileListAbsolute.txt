@@ -1,0 +1,15 @@
+D:\Repos\Cloud4YourData\Demos\4Developers\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.dll
+D:\Repos\Cloud4YourData\Demos\4Developers\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.pdb
+D:\Repos\Cloud4YourData\Demos\4Developers\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.dll
+D:\Repos\Cloud4YourData\Demos\4Developers\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.pdb
+D:\Repos\Cloud4YourData\Demos\4Developers\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.csprojResolveAssemblyReference.cache
+D:\Repos\Cloud4YourData\CommunityEvents\4Developers\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.dll
+D:\Repos\Cloud4YourData\CommunityEvents\4Developers\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.pdb
+D:\Repos\Cloud4YourData\CommunityEvents\4Developers\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.csprojResolveAssemblyReference.cache
+D:\Repos\Cloud4YourData\CommunityEvents\4Developers\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.dll
+D:\Repos\Cloud4YourData\CommunityEvents\4Developers\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.csprojResolveAssemblyReference.cache

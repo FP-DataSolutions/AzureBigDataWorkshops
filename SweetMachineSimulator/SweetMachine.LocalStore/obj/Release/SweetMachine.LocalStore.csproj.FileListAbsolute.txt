@@ -1,0 +1,8 @@
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Release\SweetMachine.LocalStore.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Release\SweetMachine.LocalStore.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Release\CsvHelper.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Release\Newtonsoft.Json.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Release\CsvHelper.xml
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Release\Newtonsoft.Json.xml
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\obj\Release\SweetMachine.LocalStore.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\obj\Release\SweetMachine.LocalStore.pdb

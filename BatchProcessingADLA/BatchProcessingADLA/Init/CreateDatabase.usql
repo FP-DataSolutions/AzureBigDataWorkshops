@@ -1,0 +1,3 @@
+﻿DROP DATABASE IF EXISTS AzureDataWorkshops;
+
+CREATE DATABASE AzureDataWorkshops;
