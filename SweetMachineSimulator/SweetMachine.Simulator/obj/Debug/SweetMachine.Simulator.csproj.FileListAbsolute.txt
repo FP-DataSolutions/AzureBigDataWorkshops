@@ -12,3 +12,4 @@ D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachi
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\bin\Debug\SweetMachine.Simulator.pdb
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.Simulator\obj\Debug\SweetMachine.Simulator.csprojResolveAssemblyReference.cache

@@ -25,3 +25,6 @@ D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachi
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\obj\Debug\SweetMachine.LocalStore.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\obj\Debug\SweetMachine.LocalStore.pdb
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\obj\Debug\SweetMachine.LocalStore.csprojResolveAssemblyReference.cache
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Debug\System.ValueTuple.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Debug\Newtonsoft.Json.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetMachine.LocalStore\bin\Debug\System.ValueTuple.xml

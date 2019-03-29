@@ -70,7 +70,6 @@ D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMach
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.Azure.Amqp.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.Azure.EventHubs.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
-D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Logging.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Tokens.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Newtonsoft.Json.dll
@@ -82,13 +81,9 @@ D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMach
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.Reflection.TypeExtensions.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.Runtime.Serialization.Primitives.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.Security.Cryptography.Algorithms.dll
-D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.Security.Cryptography.Encoding.dll
-D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.Security.Cryptography.Primitives.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.Azure.Amqp.xml
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.Azure.EventHubs.xml
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
-D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Logging.xml
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Tokens.xml
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Newtonsoft.Json.xml
@@ -97,3 +92,12 @@ D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMach
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\obj\Debug\SweetsMachine.EventHub.Sender.dll
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\obj\Debug\SweetsMachine.EventHub.Sender.pdb
 D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\obj\Debug\SweetsMachine.EventHub.Sender.csprojResolveAssemblyReference.cache
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.Azure.Services.AppAuthentication.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.Azure.Services.AppAuthentication.xml
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Logging.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Microsoft.IdentityModel.Tokens.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\Newtonsoft.Json.pdb
+D:\Repos\FP-DataSolutions\AzureBigDataWorkshops\SweetMachineSimulator\SweetsMachine.EventHub.Sender\bin\Debug\System.IdentityModel.Tokens.Jwt.pdb
